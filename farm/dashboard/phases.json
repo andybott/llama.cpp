@@ -1,14 +1,14 @@
 {
-  "current_activity": "Phase 4 in progress: Strix driver FIXED (kernel modules installed, service back on GPU, 10x prefill restored). Awaiting cuda-toolkit + glslang-tools install for sm_120 build. Phase 7 window to 07-21.",
+  "current_activity": "Phase 4 COMPLETE: Strix promoted to REAP-25B (CUDA sm_120, pp 2065/tg 37.5). V100 prep: 70;86 rebuild running on server. Phase 7 window to 07-21.",
   "updated": "2026-07-07",
   "phases": [
     {"icon": "✅", "name": "Phase 0 — Hub bootstrap", "note": "fork + CUDA build b9892; baselines: REAP-25B ncmoe99 ub2048 pp 905.3 t/s (3070)"},
     {"icon": "✅", "name": "Phase 1 — fable5 patches", "note": "tag farm-b9892-fable5-r1; token-identical PASS; pp 905→1181 t/s (+30.5%), tg 13.1→15.4 (+17.6%)"},
     {"icon": "✅", "name": "Phase 2 — Workstation coder :8082", "note": "REAP-25B live next to researcher (7.8/8GB); OMP acceptance PASS; advisor role → local (3090 thrash fixed)"},
     {"icon": "✅", "name": "Phase 3 — Server 3090", "note": "farm build serving (+13% prefill); parity byte-identical; hedgefund gate PASS; 30B@128K entry added (ncmoe24+flags)"},
-    {"icon": "🔄", "name": "Phase 4 — Strix 5060", "note": "driver fixed + node healed (prefill 93.8s→9.4s); farm tag cloned; CUDA build awaits cuda-toolkit install; Vulkan build awaits glslang-tools"},
+    {"icon": "✅", "name": "Phase 4 — Strix 5060", "note": "CUDA sm_120 works; PROMOTED to REAP-25B MoE (pp 2065/tg 37.5, ncmoe36+flags); tier0-infantry now 25B; driver incident healed"},
     {"icon": "✅", "name": "Phase 5 — Mac Mini M1", "note": "b9892 prebuilt live; bench parity (133 pp / 13.6 tg); fleet on one tag; Mac on dashboard"},
-    {"icon": "⛔", "name": "Phase 6 — New AI server", "note": "hardware-gated (awaiting Arc B70s)"},
+    {"icon": "⬜", "name": "Phase 6 — New AI server", "note": "PLAN CHANGED: 5x V100 32GB arrived (4 = new farm server, 1 = 3090 box → 56GB). Awaiting chassis + EPS12V adapters; 70;86 build prep done"},
     {"icon": "🔄", "name": "Phase 7 — Dev cutover", "note": "routing policy written (deploy/litellm/ROUTING_POLICY.md); measurement window to 07-21; Crucible promotions pending"}
   ]
 }

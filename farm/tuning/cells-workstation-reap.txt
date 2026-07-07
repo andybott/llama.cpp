@@ -1,0 +1,11 @@
+# workstation-3070 / REAP-25B coder — serving config today: ncmoe99 ub2048 t8 pf3
+# threads sweep (t8 cell doubles as the prefetch-depth-3 baseline)
+t6_pf3  :: GGML_CUDA_REGISTER_HOST=1 GGML_SCHED_PREFETCH_EXPERTS=3 :: -p 2048 -n 128 -r 2 -ncmoe 99 -ub 2048 -t 6
+t8_pf3  :: GGML_CUDA_REGISTER_HOST=1 GGML_SCHED_PREFETCH_EXPERTS=3 :: -p 2048 -n 128 -r 2 -ncmoe 99 -ub 2048 -t 8
+t10_pf3 :: GGML_CUDA_REGISTER_HOST=1 GGML_SCHED_PREFETCH_EXPERTS=3 :: -p 2048 -n 128 -r 2 -ncmoe 99 -ub 2048 -t 10
+t12_pf3 :: GGML_CUDA_REGISTER_HOST=1 GGML_SCHED_PREFETCH_EXPERTS=3 :: -p 2048 -n 128 -r 2 -ncmoe 99 -ub 2048 -t 12
+t16_pf3 :: GGML_CUDA_REGISTER_HOST=1 GGML_SCHED_PREFETCH_EXPERTS=3 :: -p 2048 -n 128 -r 2 -ncmoe 99 -ub 2048 -t 16
+# prefetch-depth sweep at current threads
+t8_pf2  :: GGML_CUDA_REGISTER_HOST=1 GGML_SCHED_PREFETCH_EXPERTS=2 :: -p 2048 -n 128 -r 2 -ncmoe 99 -ub 2048 -t 8
+t8_pf4  :: GGML_CUDA_REGISTER_HOST=1 GGML_SCHED_PREFETCH_EXPERTS=4 :: -p 2048 -n 128 -r 2 -ncmoe 99 -ub 2048 -t 8
+t8_pf6  :: GGML_CUDA_REGISTER_HOST=1 GGML_SCHED_PREFETCH_EXPERTS=6 :: -p 2048 -n 128 -r 2 -ncmoe 99 -ub 2048 -t 8

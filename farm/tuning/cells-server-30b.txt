@@ -1,0 +1,13 @@
+# server-3090 / Qwen3-Coder-30B-A3B (the qwen3-coder-30b-a3b-128k llama-swap entry) —
+# serving config today: ncmoe24 ub2048 t15 pf3
+# ncmoe sweep at serving threads (lower ncmoe = more experts on GPU; RAM cost ~0.31GB/layer)
+nc16_t15_pf3 :: GGML_CUDA_REGISTER_HOST=1 GGML_SCHED_PREFETCH_EXPERTS=3 :: -p 2048 -n 128 -r 2 -ncmoe 16 -ub 2048 -t 15
+nc20_t15_pf3 :: GGML_CUDA_REGISTER_HOST=1 GGML_SCHED_PREFETCH_EXPERTS=3 :: -p 2048 -n 128 -r 2 -ncmoe 20 -ub 2048 -t 15
+nc24_t15_pf3 :: GGML_CUDA_REGISTER_HOST=1 GGML_SCHED_PREFETCH_EXPERTS=3 :: -p 2048 -n 128 -r 2 -ncmoe 24 -ub 2048 -t 15
+nc28_t15_pf3 :: GGML_CUDA_REGISTER_HOST=1 GGML_SCHED_PREFETCH_EXPERTS=3 :: -p 2048 -n 128 -r 2 -ncmoe 28 -ub 2048 -t 15
+# threads sweep (7700X 8C/16T; t15 doubled by nc24 cell above)
+nc24_t8_pf3  :: GGML_CUDA_REGISTER_HOST=1 GGML_SCHED_PREFETCH_EXPERTS=3 :: -p 2048 -n 128 -r 2 -ncmoe 24 -ub 2048 -t 8
+nc24_t12_pf3 :: GGML_CUDA_REGISTER_HOST=1 GGML_SCHED_PREFETCH_EXPERTS=3 :: -p 2048 -n 128 -r 2 -ncmoe 24 -ub 2048 -t 12
+# prefetch-depth sweep
+nc24_t15_pf2 :: GGML_CUDA_REGISTER_HOST=1 GGML_SCHED_PREFETCH_EXPERTS=2 :: -p 2048 -n 128 -r 2 -ncmoe 24 -ub 2048 -t 15
+nc24_t15_pf4 :: GGML_CUDA_REGISTER_HOST=1 GGML_SCHED_PREFETCH_EXPERTS=4 :: -p 2048 -n 128 -r 2 -ncmoe 24 -ub 2048 -t 15

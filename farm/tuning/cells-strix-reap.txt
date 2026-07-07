@@ -1,0 +1,13 @@
+# strix-5060 / REAP-25B infantry — serving config today: ncmoe36 ub2048 t12 pf3
+# ncmoe fine sweep (more expert layers on GPU = better tg until VRAM runs out; OOM cell just FAILs)
+nc30_t12_pf3 :: GGML_CUDA_REGISTER_HOST=1 GGML_SCHED_PREFETCH_EXPERTS=3 :: -p 2048 -n 128 -r 2 -ncmoe 30 -ub 2048 -t 12
+nc32_t12_pf3 :: GGML_CUDA_REGISTER_HOST=1 GGML_SCHED_PREFETCH_EXPERTS=3 :: -p 2048 -n 128 -r 2 -ncmoe 32 -ub 2048 -t 12
+nc34_t12_pf3 :: GGML_CUDA_REGISTER_HOST=1 GGML_SCHED_PREFETCH_EXPERTS=3 :: -p 2048 -n 128 -r 2 -ncmoe 34 -ub 2048 -t 12
+nc36_t12_pf3 :: GGML_CUDA_REGISTER_HOST=1 GGML_SCHED_PREFETCH_EXPERTS=3 :: -p 2048 -n 128 -r 2 -ncmoe 36 -ub 2048 -t 12
+# threads sweep (Arrow Lake 24T with E-cores — t12 cell above doubles as baseline)
+nc36_t8_pf3  :: GGML_CUDA_REGISTER_HOST=1 GGML_SCHED_PREFETCH_EXPERTS=3 :: -p 2048 -n 128 -r 2 -ncmoe 36 -ub 2048 -t 8
+nc36_t16_pf3 :: GGML_CUDA_REGISTER_HOST=1 GGML_SCHED_PREFETCH_EXPERTS=3 :: -p 2048 -n 128 -r 2 -ncmoe 36 -ub 2048 -t 16
+nc36_t20_pf3 :: GGML_CUDA_REGISTER_HOST=1 GGML_SCHED_PREFETCH_EXPERTS=3 :: -p 2048 -n 128 -r 2 -ncmoe 36 -ub 2048 -t 20
+# prefetch-depth sweep
+nc36_t12_pf2 :: GGML_CUDA_REGISTER_HOST=1 GGML_SCHED_PREFETCH_EXPERTS=2 :: -p 2048 -n 128 -r 2 -ncmoe 36 -ub 2048 -t 12
+nc36_t12_pf4 :: GGML_CUDA_REGISTER_HOST=1 GGML_SCHED_PREFETCH_EXPERTS=4 :: -p 2048 -n 128 -r 2 -ncmoe 36 -ub 2048 -t 12

@@ -1,0 +1,6 @@
+[Unit]
+Description=push node status to farm dashboard
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash %h/farm-dashboard/farm_report.sh

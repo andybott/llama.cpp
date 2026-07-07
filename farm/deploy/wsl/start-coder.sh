@@ -25,7 +25,7 @@ ALIAS=qwen3-coder-reap-25b-a3b
 NCMOE=99        # all expert layers in CPU RAM (~13GB of the 15GB GGUF)
 UBATCH=2048     # fastest prefill; drop to 512 if VRAM-tight next to the researcher
 CTX=32768       # q8_0 KV; drop to 16384 if VRAM-tight
-THREADS=15
+THREADS=8       # physical cores (i7-11800H 8C/16T) — matches Phase 1 validated numbers
 
 if curl -s --max-time 2 "http://127.0.0.1:${PORT}/health" >/dev/null 2>&1; then
   echo "coder already up on :${PORT}"

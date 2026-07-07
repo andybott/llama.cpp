@@ -1,14 +1,14 @@
 {
-  "current_activity": "Phase 3 COMPLETE: 3090 cut over to farm build (+13% prefill), 30B coder @128K ctx now serveable (ncmoe+flags). Next: Phase 4 Strix.",
+  "current_activity": "Phases 0-3+5 complete; Phase 4 Strix BLOCKED (needs user: reboot + sudo for driver/toolkit); Phase 7 measurement window running to 2026-07-21.",
   "updated": "2026-07-07",
   "phases": [
     {"icon": "✅", "name": "Phase 0 — Hub bootstrap", "note": "fork + CUDA build b9892; baselines: REAP-25B ncmoe99 ub2048 pp 905.3 t/s (3070)"},
     {"icon": "✅", "name": "Phase 1 — fable5 patches", "note": "tag farm-b9892-fable5-r1; token-identical PASS; pp 905→1181 t/s (+30.5%), tg 13.1→15.4 (+17.6%)"},
     {"icon": "✅", "name": "Phase 2 — Workstation coder :8082", "note": "REAP-25B live next to researcher (7.8/8GB); OMP acceptance PASS; advisor role → local (3090 thrash fixed)"},
     {"icon": "✅", "name": "Phase 3 — Server 3090", "note": "farm build serving (+13% prefill); parity byte-identical; hedgefund gate PASS; 30B@128K entry added (ncmoe24+flags)"},
-    {"icon": "🔄", "name": "Phase 4 — Strix 5060", "note": "CUDA sm_120 attempt; REAP-25B ncmoe if it works; Vulkan fallback"},
-    {"icon": "⬜", "name": "Phase 5 — Mac Mini M1", "note": "Metal version-alignment only"},
+    {"icon": "⛔", "name": "Phase 4 — Strix 5060", "note": "BLOCKED needs user: /dev/nvidia0 gone (kernel update) + sudo password for toolkit; do NOT restart llama-strix.service until fixed"},
+    {"icon": "✅", "name": "Phase 5 — Mac Mini M1", "note": "b9892 prebuilt live; bench parity (133 pp / 13.6 tg); fleet on one tag; Mac on dashboard"},
     {"icon": "⛔", "name": "Phase 6 — New AI server", "note": "hardware-gated (awaiting Arc B70s)"},
-    {"icon": "⬜", "name": "Phase 7 — Dev cutover", "note": "route agents to local tiers; measure paid-token reduction"}
+    {"icon": "🔄", "name": "Phase 7 — Dev cutover", "note": "routing policy written (deploy/litellm/ROUTING_POLICY.md); measurement window to 07-21; Crucible promotions pending"}
   ]
 }

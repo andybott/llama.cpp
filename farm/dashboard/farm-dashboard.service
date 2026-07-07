@@ -1,0 +1,11 @@
+[Unit]
+Description=llama farm dashboard (:8180, LAN)
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 %h/farm-dashboard/farm_dashboard.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

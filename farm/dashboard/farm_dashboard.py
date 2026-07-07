@@ -27,6 +27,7 @@ RETAIN_DAYS = 60        # history files older than this are deleted
 os.makedirs(HIST_DIR, exist_ok=True)
 _lock = threading.Lock()
 _latest = {}            # node -> last snapshot (with server-side recv_ts)
+_activity = {"text": "", "ts": 0.0}   # live status line, POST /activity {"text": "..."}
 
 def _phases():
     try:
@@ -147,7 +148,13 @@ class H(BaseHTTPRequestHandler):
         elif u.path == "/api/state":
             with _lock:
                 nodes = dict(_latest)
-            self._send(200, {"server_ts": time.time(), "nodes": nodes, "phases": _phases()})
+                act = dict(_activity)
+            phases = _phases()
+            if act["text"]:
+                age = int(time.time() - act["ts"])
+                ago = f"{age}s" if age < 120 else f"{age // 60}m"
+                phases["current_activity"] = f"{act['text']}  [{ago} ago]"
+            self._send(200, {"server_ts": time.time(), "nodes": nodes, "phases": phases})
         elif u.path == "/api/history":
             q = parse_qs(u.query)
             node = q.get("node", [""])[0]
@@ -159,7 +166,19 @@ class H(BaseHTTPRequestHandler):
             self._send(404, {"error": "not found"})
 
     def do_POST(self):
-        if urlparse(self.path).path != "/report":
+        path = urlparse(self.path).path
+        if path == "/activity":
+            try:
+                n = int(self.headers.get("Content-Length", 0))
+                text = str(json.loads(self.rfile.read(n)).get("text", ""))[:300]
+            except Exception:
+                return self._send(400, {"error": "bad payload"})
+            with _lock:
+                _activity["text"], _activity["ts"] = text, time.time()
+            with open(os.path.join(HIST_DIR, "activity.log"), "a") as f:
+                f.write(f"{time.strftime('%Y-%m-%d %H:%M:%S')} {text}\n")
+            return self._send(200, {"ok": True})
+        if path != "/report":
             return self._send(404, {"error": "not found"})
         try:
             n = int(self.headers.get("Content-Length", 0))

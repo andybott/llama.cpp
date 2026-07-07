@@ -1,0 +1,11 @@
+[Unit]
+Description=Local coder llama-server :8082 (Qwen3-Coder-REAP-25B, fable5-patched farm build)
+After=network.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/bash %h/coder/start-coder.sh
+
+[Install]
+WantedBy=default.target

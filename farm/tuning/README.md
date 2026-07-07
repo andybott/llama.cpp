@@ -18,9 +18,12 @@ The repeatable procedure for optimizing any llama.cpp node — written so the V1
 
 ## Procedure (per node)
 
-1. **Window** (spec §5b): wrappers stop the node's serving units, sweep, restart, and
-   health-verify — a window is not closed until resume is verified. Wrappers post
-   OPEN/CLOSED to the dashboard activity line.
+1. **Lease the GPU** (GPU Lease Protocol, `ai-tracevector-alpha/docs/GPU_LEASE_PROTOCOL_2026-07-07.md`):
+   wrappers `gpuctl claim` (holder `llamacpp-opt`) before touching the card — this pauses
+   the GPU's user-timer consumers fleet-wide, suspends endpoint probes, and queues other
+   users. System units (llama-swap, local-alpha) are still stopped/started by the wrapper
+   with sudo. Release only after services are health-verified. Never stop timers manually
+   without a lease — the remediator restarts them within 15 min.
 2. **Sweep** with `sweep.sh` at `-r 2` (exploration; ±few % noise is fine for ranking).
 3. **Confirm the winner at `-r 3`**, plus a **serving probe** at the real serving config
    (full ctx, q8 KV): must load, stay under ~93% VRAM, pass a tool-call/completion smoke.

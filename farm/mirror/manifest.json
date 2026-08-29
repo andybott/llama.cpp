@@ -1,0 +1,219 @@
+{
+ "_doc": "Farm weights mirror \u2014 second copy on the Strix box at ~/farm-mirror/weights/. Every sha256 below was verified identical on source and mirror on the date given. hf_repo/hf_revision are still UNRESOLVED: that is W1 of the Hugging Face decoupling spec and needs an API lookup while huggingface.co is still open.",
+ "verified_on": "2026-08-28",
+ "mirror_host": "192.168.1.205 (strix) ~/farm-mirror/weights",
+ "not_mirrored": [
+  {
+   "file": "qwen3-coder-reap-25b-a3b-q4_k_m.gguf",
+   "reason": "Strix already holds it as a serving copy at ~/models"
+  },
+  {
+   "file": "Qwen2.5-7B-Instruct-Q4_K_M.gguf",
+   "reason": "Strix already holds it as a serving copy at ~/models; the Mac's copy is the same file"
+  }
+ ],
+ "totals": {
+  "files": 22,
+  "bytes": 556269599616
+ },
+ "files": [
+  {
+   "tree": "ai-farm",
+   "source": "192.168.1.142:~/models",
+   "path": "Kimi-Linear-48B-A3B-Instruct-Q8_0/moonshotai_Kimi-Linear-48B-A3B-Instruct-Q8_0-00001-of-00002.gguf",
+   "bytes": 39761166432,
+   "sha256": "8b9902c6072803a56f89ab515c363d433117b2ba601989565a3aa9c0836771bc",
+   "hf_repo": "UNRESOLVED",
+   "hf_revision": "UNRESOLVED"
+  },
+  {
+   "tree": "ai-farm",
+   "source": "192.168.1.142:~/models",
+   "path": "Kimi-Linear-48B-A3B-Instruct-Q8_0/moonshotai_Kimi-Linear-48B-A3B-Instruct-Q8_0-00002-of-00002.gguf",
+   "bytes": 12487220000,
+   "sha256": "999d77a85f36d296c557e26a4a0ced2c628c6f1faed79ca3550442d7c02a45c5",
+   "hf_repo": "UNRESOLVED",
+   "hf_revision": "UNRESOLVED"
+  },
+  {
+   "tree": "ai-farm",
+   "source": "192.168.1.142:~/models",
+   "path": "Qwen2.5-3B-Instruct-Q4_K_M.gguf",
+   "bytes": 1929903264,
+   "sha256": "9c9f56a391a3abbd5b89d0245bf6106081bcc3173119d4229235dd9d23253f94",
+   "hf_repo": "UNRESOLVED",
+   "hf_revision": "UNRESOLVED"
+  },
+  {
+   "tree": "ai-farm",
+   "source": "192.168.1.142:~/models",
+   "path": "Qwen3-Coder-Next-UD-Q4_K_XL/Qwen3-Coder-Next-UD-Q4_K_XL.gguf",
+   "bytes": 49608478720,
+   "sha256": "4bb93f0a0221ef4ff963ca9094df629c8dfdfabc3b4fdd85c1a2e4c0624fce36",
+   "hf_repo": "UNRESOLVED",
+   "hf_revision": "UNRESOLVED"
+  },
+  {
+   "tree": "ai-farm",
+   "source": "192.168.1.142:~/models",
+   "path": "Qwen3.6-35B-A3B-Q8_0/Qwen3.6-35B-A3B-Q8_0.gguf",
+   "bytes": 36903140320,
+   "sha256": "d1a395809f65a43a13ad119eb4e7acdef1ac6d68120f39902c8ab96e72794a59",
+   "hf_repo": "UNRESOLVED",
+   "hf_revision": "UNRESOLVED"
+  },
+  {
+   "tree": "ai-farm",
+   "source": "192.168.1.142:~/models",
+   "path": "V4-Flash-UD-Q2_K_XL/DeepSeek-V4-Flash-0731-UD-Q2_K_XL-00001-of-00003.gguf",
+   "bytes": 5257664,
+   "sha256": "de65c5bb660817b95cc281bf54935f9d1bcc3b22535f2eae63b35a14c7c5724b",
+   "hf_repo": "UNRESOLVED",
+   "hf_revision": "UNRESOLVED"
+  },
+  {
+   "tree": "ai-farm",
+   "source": "192.168.1.142:~/models",
+   "path": "V4-Flash-UD-Q2_K_XL/DeepSeek-V4-Flash-0731-UD-Q2_K_XL-00002-of-00003.gguf",
+   "bytes": 49437013568,
+   "sha256": "c8728a298862cd8736782e2e4056e5e3e03c415ba552a38173264494e41ef327",
+   "hf_repo": "UNRESOLVED",
+   "hf_revision": "UNRESOLVED"
+  },
+  {
+   "tree": "ai-farm",
+   "source": "192.168.1.142:~/models",
+   "path": "V4-Flash-UD-Q2_K_XL/DeepSeek-V4-Flash-0731-UD-Q2_K_XL-00003-of-00003.gguf",
+   "bytes": 47390237120,
+   "sha256": "a4bae0788c025c1b2388754592c98fefa1372981748ac9875039bf6a30e6eeb4",
+   "hf_repo": "UNRESOLVED",
+   "hf_revision": "UNRESOLVED"
+  },
+  {
+   "tree": "ai-farm",
+   "source": "192.168.1.142:~/models",
+   "path": "V4-Flash-UD-Q3_K_XL/DeepSeek-V4-Flash-0731-UD-Q3_K_XL-00001-of-00004.gguf",
+   "bytes": 5257664,
+   "sha256": "36e02d6d87c9fbfe0dd4e8fd0d03cef2aa2c509248802a9d1772159112db3734",
+   "hf_repo": "UNRESOLVED",
+   "hf_revision": "UNRESOLVED"
+  },
+  {
+   "tree": "ai-farm",
+   "source": "192.168.1.142:~/models",
+   "path": "V4-Flash-UD-Q3_K_XL/DeepSeek-V4-Flash-0731-UD-Q3_K_XL-00002-of-00004.gguf",
+   "bytes": 49350774208,
+   "sha256": "2e21e08c13fce1e2f5403f1571a0a1abc8b85469f011eaebad7b8f9ea9d10f84",
+   "hf_repo": "UNRESOLVED",
+   "hf_revision": "UNRESOLVED"
+  },
+  {
+   "tree": "ai-farm",
+   "source": "192.168.1.142:~/models",
+   "path": "V4-Flash-UD-Q3_K_XL/DeepSeek-V4-Flash-0731-UD-Q3_K_XL-00003-of-00004.gguf",
+   "bytes": 49533038144,
+   "sha256": "ac71bc6fd30c0af3eb702cea5bc94be570b9fed4857d63bf7180ec668683612c",
+   "hf_repo": "UNRESOLVED",
+   "hf_revision": "UNRESOLVED"
+  },
+  {
+   "tree": "ai-farm",
+   "source": "192.168.1.142:~/models",
+   "path": "V4-Flash-UD-Q3_K_XL/DeepSeek-V4-Flash-0731-UD-Q3_K_XL-00004-of-00004.gguf",
+   "bytes": 29317659776,
+   "sha256": "28b764750db8c4539df530292cd5950c6d161d81b20673b736ff4f8ca4ffa7ae",
+   "hf_repo": "UNRESOLVED",
+   "hf_revision": "UNRESOLVED"
+  },
+  {
+   "tree": "ai-farm",
+   "source": "192.168.1.142:~/models",
+   "path": "gpt-oss-120b-MXFP4/gpt-oss-120b-MXFP4.gguf",
+   "bytes": 63387346208,
+   "sha256": "582bd40f6886200101f4c4ed9f25f3fe80cc14c86e9e2b37746cd8904a0c622d",
+   "hf_repo": "UNRESOLVED",
+   "hf_revision": "UNRESOLVED"
+  },
+  {
+   "tree": "hub",
+   "source": "DESKTOP-5Q4UBCG (WSL):~/models",
+   "path": "Qwen2.5-3B-Instruct-Q4_K_M.gguf",
+   "bytes": 1929903264,
+   "sha256": "9c9f56a391a3abbd5b89d0245bf6106081bcc3173119d4229235dd9d23253f94",
+   "hf_repo": "UNRESOLVED",
+   "hf_revision": "UNRESOLVED"
+  },
+  {
+   "tree": "hub",
+   "source": "DESKTOP-5Q4UBCG (WSL):~/models",
+   "path": "Qwen3.5-4B-Q4_K_M.gguf",
+   "bytes": 2740937888,
+   "sha256": "00fe7986ff5f6b463e62455821146049db6f9313603938a70800d1fb69ef11a4",
+   "hf_repo": "UNRESOLVED",
+   "hf_revision": "UNRESOLVED"
+  },
+  {
+   "tree": "hub",
+   "source": "DESKTOP-5Q4UBCG (WSL):~/models",
+   "path": "gemma-4-E4B_q4_0-it.gguf",
+   "bytes": 5154939136,
+   "sha256": "e8b6a059ba86947a44ace84d6e5679795bc41862c25c30513142588f0e9dba1d",
+   "hf_repo": "UNRESOLVED",
+   "hf_revision": "UNRESOLVED"
+  },
+  {
+   "tree": "server",
+   "source": "192.168.1.136:~/models",
+   "path": "Qwen3-Coder-30B-A3B-Instruct-Q4_K_M.gguf",
+   "bytes": 18556689568,
+   "sha256": "fadc3e5f8d42bf7e894a785b05082e47daee4df26680389817e2093056f088ad",
+   "hf_repo": "UNRESOLVED",
+   "hf_revision": "UNRESOLVED"
+  },
+  {
+   "tree": "server",
+   "source": "192.168.1.136:~/models",
+   "path": "Qwen3-Next-80B-A3B-Thinking-UD-Q4_K_XL.gguf",
+   "bytes": 45932667040,
+   "sha256": "69c4573d2c30bbe5f6631ac2dff3fc482a012c1f9a2e157412b841bd052ee4f0",
+   "hf_repo": "UNRESOLVED",
+   "hf_revision": "UNRESOLVED"
+  },
+  {
+   "tree": "server",
+   "source": "192.168.1.136:~/models",
+   "path": "gemma-4-26B_q4_0-it.gguf",
+   "bytes": 14439361440,
+   "sha256": "4c856523d61d77922dbc0b26753a6bf6208e5d69d80db0c04dcd776832d054c5",
+   "hf_repo": "UNRESOLVED",
+   "hf_revision": "UNRESOLVED"
+  },
+  {
+   "tree": "server",
+   "source": "192.168.1.136:~/models",
+   "path": "gemma-4-31B_q4_0-it.gguf",
+   "bytes": 17650999456,
+   "sha256": "0374ce7b0124db9ba96fc649e835c531223ee224a497ce88a374baaea10932ec",
+   "hf_repo": "UNRESOLVED",
+   "hf_revision": "UNRESOLVED"
+  },
+  {
+   "tree": "server",
+   "source": "192.168.1.136:~/models",
+   "path": "ornith-1.0-9b-Q4_K_M.gguf",
+   "bytes": 5629108704,
+   "sha256": "5720d1f671b4996481274fffe01868c3c36e87c135cc8538471cc7bd6087b106",
+   "hf_repo": "UNRESOLVED",
+   "hf_revision": "UNRESOLVED"
+  },
+  {
+   "tree": "server",
+   "source": "192.168.1.136:~/models",
+   "path": "qwen3-coder-reap-25b-a3b-q4_k_m.gguf",
+   "bytes": 15118500032,
+   "sha256": "e906f11bf2f01f0f381b04fa627bf2bda678a1c44a414a95b4e6e2f2dcb34f8e",
+   "hf_repo": "UNRESOLVED",
+   "hf_revision": "UNRESOLVED"
+  }
+ ]
+}
